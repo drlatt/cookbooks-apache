@@ -2,11 +2,9 @@ package 'httpd' do
 	action :install
 end
 
-file '/var/www/html/index.html' do
-	content "hello world
-	IPADDRESS: #{node['ipaddress']}
-	HOSTNAME: #{node['hostname']}
-"
+template '/var/www/html/index.html' do
+	source 'motd.erb'
+
 	action :create
 end
 
