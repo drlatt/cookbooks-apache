@@ -3,7 +3,7 @@ package 'httpd' do
 end
 
 template '/var/www/html/index.html' do
-	source 'motd.erb'
+	source 'index.html.erb'
 
 	action :create
 end
